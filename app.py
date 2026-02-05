@@ -1,12 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 # Rotte
 @app.route("/")
 def index():
-    wow = "bello"
-    return f"<h1>Ciao, {wow} mondo!</h1>"
+    return render_template("index.html")
 
 @app.route("/info")
 def info():
