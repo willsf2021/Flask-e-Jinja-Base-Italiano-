@@ -7,7 +7,11 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/info")
+@app.route("/esempio/")
+def esempio_jinja():
+    return render_template("flask.html")
+
+@app.route("/info/")
 def info():
     return "<h2>Queste sono un sacoo di informazioni!</h2>"
 
