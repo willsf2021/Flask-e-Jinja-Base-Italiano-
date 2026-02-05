@@ -9,10 +9,10 @@
 
 ### Prima di iniziare ricordiamo...
 ```python
-    # Installare Python virtual env
+    # Installare Python virtualenv
     > pip install virtualenv
 
-    # Creare l'ambiente virtual e attivare
+    # Creare l'ambiente virtuale e attivare
     > virtualenv venv
     > venv\scripts\activate
 
