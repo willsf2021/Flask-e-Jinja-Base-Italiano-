@@ -6,3 +6,17 @@
 - Si porta dentro due dependenze:
     - Werkzeug (routing, debugger, WSGI support)
     - Jinja2 (templating)
+
+### Prima di iniziare ricordiamo...
+```python
+    # Installare Python virtual env
+    > pip install virtualenv
+
+    # Creare l'ambiente virtual e attivare
+    > virtualenv venv
+    > venv\scripts\activate
+
+    # Installare le dipendenze a partire del 'requirements.txt', se c'e.
+    > pip install -r requirements.txt    
+
+```
