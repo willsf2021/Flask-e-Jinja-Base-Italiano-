@@ -1,0 +1,23 @@
+
+{% extends 'index.html' %}
+    {% block title %}404 - Página não encontrada{% endblock title %} {% block
+    css %}
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+    </style>
+    {% endblock css %}
+      {% block content %}
+      <div class="container">
+        <div class="emoji">😕</div>
+        <h1>404</h1>
+
+        <h2>Página não encontrada</h2>
+        
+        <a href="{{ url_for('esempio_jinja')}}">Voltar para a página inicial</a>
+      </div>
+      {% endblock content %}

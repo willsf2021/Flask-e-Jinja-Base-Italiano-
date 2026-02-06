@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corso Flask</title>
+    <title>{% block title %}{% endblock title %}</title>
+    {% block css %}{% endblock css %}
 </head>
 <body>
-    <h1>Questo bellissimo corso su Flask</h1>
     {% block content %}
     {% endblock content %}
 </body>
