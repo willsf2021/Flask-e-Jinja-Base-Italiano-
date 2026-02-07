@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, url_for
+from forms import FormCorsoBase
 
 app = Flask(__name__)
+
+app.config["SECRET_KEY"] = "supersafekey"
 
 
 # Rotta Iniziale
@@ -28,7 +31,7 @@ def new_course():
             context[key_context] = request.args.get(arg)
 
     # Oppure (Per questo devi conocescere list and dict comprehension):
-    
+
     # context.update(
     #     {
     #         arg.replace("-", "_"): request.args.get(arg)
@@ -36,10 +39,29 @@ def new_course():
     #         if arg in args_keys
     #     }
     # )
-    
-   
 
     return render_template("course_new.html", context=context)
+
+
+# Form Avanzati
+@app.route("/course/advanced/", methods=["GET", "POST"])
+def advanced_form():
+    name = False
+    subject = False
+    form = FormCorsoBase()
+
+    # Costruire la logica del form
+    # Per questo codice sotto essere eseguito la richiesta deve essere il 'POST'
+    if form.validate_on_submit():
+        name = form.name.data
+        subject = form.subject.data
+
+    return render_template(
+        "course_advanced.html",
+        course_advanced_form=form,
+        course_name=name,
+        course_subject=subject,
+    )
 
 
 @app.route("/course/created")
